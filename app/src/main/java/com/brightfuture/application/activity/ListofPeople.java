@@ -1,10 +1,15 @@
 package com.brightfuture.application.activity;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.brightfuture.application.adapters.PeopleListAdapter;
 import com.brightfuture.application.persistence.Person;
@@ -13,14 +18,15 @@ import com.example.application.R;
 import java.util.List;
 
 public class ListofPeople extends ActionBarActivity {
-
+    List peeps;
+    static final String PERSON_POSITION = "PERSON POSITION";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listof_people);
 
         //Gets all individuals and puts them in the list 'peeps'
-        List peeps = Person.listAll(Person.class);
+        peeps = Person.listAll(Person.class);
 
         // Get the ListView
         ListView listView = (ListView) findViewById(R.id.list);
@@ -28,6 +34,17 @@ public class ListofPeople extends ActionBarActivity {
         //Set 'peeps' to ListView
         PeopleListAdapter activityListAdapter = new PeopleListAdapter(this, R.layout.peoplelistadapter, peeps);
         listView.setAdapter(activityListAdapter);
+
+        // OnItemClickListener for ListView
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ListofPeople.this, BarChartActivity.class);
+                intent.putExtra(PERSON_POSITION, position);
+                startActivity(intent);
+
+            }
+        });
     }
 
 

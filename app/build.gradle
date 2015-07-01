@@ -27,4 +27,5 @@ dependencies {
         exclude module: 'support-v4'
     }
     compile 'com.google.android.gms:play-services:7.5.0'
+    compile files('libs/mpandroidchartlibrary-2-1-0.jar')
 }

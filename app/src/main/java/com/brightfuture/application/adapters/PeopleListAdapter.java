@@ -53,5 +53,4 @@ public View getView(int position, View convertView, ViewGroup parent) {
 public int getCount() {
         return (this.listItems != null) ? this.listItems.size() : 0;
         }
-
-        }
+}

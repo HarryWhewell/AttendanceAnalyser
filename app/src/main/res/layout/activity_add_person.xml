@@ -51,13 +51,55 @@
         android:gravity="center_horizontal"
         android:background="@drawable/edit_text_style"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:inputType="text"
+        android:ems="12"
+        android:id="@+id/etAttended"
+        android:hint="Days Attended"
+        android:layout_below="@+id/etLastName"
+        android:ellipsize="start"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:background="@drawable/edit_text_style"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:inputType="text"
+        android:ems="12"
+        android:id="@+id/etAuthorised"
+        android:hint="Authorised Days"
+        android:layout_below="@+id/etAttended"
+        android:ellipsize="start"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:background="@drawable/edit_text_style"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:inputType="text"
+        android:ems="12"
+        android:id="@+id/etUnauthorised"
+        android:hint="Unauthorised Days"
+        android:layout_below="@+id/etAuthorised"
+        android:ellipsize="start"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:background="@drawable/edit_text_style"/>
+
     <Button
         android:layout_width="125dp"
         android:layout_height="35dp"
         android:text="Add Person"
         android:id="@+id/addBtn"
         android:onClick="addPerson"
-        android:layout_below="@+id/etLastName"
+        android:layout_below="@+id/etUnauthorised"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:textColor="#F44336"

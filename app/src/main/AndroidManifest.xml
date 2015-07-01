@@ -59,6 +59,10 @@
             android:name="com.brightfuture.application.activity.AddPerson"
             android:label="@string/title_activity_add_person" >
         </activity>
+        <activity
+            android:name="com.brightfuture.application.activity.BarChartActivity"
+            android:label="@string/title_activity_bar_chart" >
+        </activity>
     </application>
 
 </manifest>

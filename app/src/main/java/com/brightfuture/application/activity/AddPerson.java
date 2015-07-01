@@ -14,9 +14,15 @@ public class AddPerson extends ActionBarActivity {
 
     EditText mFirstName;
     EditText mLastName;
+    EditText mAttended;
+    EditText mAuthorised;
+    EditText mUnauthorised;
 
     String firstName;
     String lastName;
+    int Attended;
+    int Authorised;
+    int Unauthorised;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,9 @@ public class AddPerson extends ActionBarActivity {
 
         mFirstName = (EditText) findViewById(R.id.etFirstName);
         mLastName = (EditText) findViewById(R.id.etLastName);
+        mAttended = (EditText) findViewById(R.id.etAttended);
+        mAuthorised = (EditText) findViewById(R.id.etAuthorised);
+        mUnauthorised = (EditText) findViewById(R.id.etUnauthorised);
     }
 
 
@@ -33,14 +42,19 @@ public class AddPerson extends ActionBarActivity {
         // Get input from EditText fields
         firstName = mFirstName.getText().toString();
         lastName = mLastName.getText().toString();
-
+        Attended = Integer.parseInt(mAttended.getText().toString());
+        Authorised = Integer.parseInt(mAuthorised.getText().toString());
+        Unauthorised = Integer.parseInt(mUnauthorised.getText().toString());
         // Set person to model
-        Person person = new Person(firstName,lastName);
+        Person person = new Person(firstName,lastName,Attended,Authorised,Unauthorised);
         person.save();
 
         // Clear EditText fields
         mFirstName.setText("");
         mLastName.setText("");
+        mAttended.setText("");
+        mAuthorised.setText("");
+        mUnauthorised.setText("");
 
         Toast.makeText(getApplicationContext(), "Person Added", Toast.LENGTH_SHORT).show();
     }
