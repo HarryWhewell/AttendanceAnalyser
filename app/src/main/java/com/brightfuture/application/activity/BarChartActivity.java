@@ -20,7 +20,7 @@ import com.brightfuture.application.persistence.Person;
 
 public class BarChartActivity extends ActionBarActivity {
     List peeps;
-
+    Person clicked;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +31,15 @@ public class BarChartActivity extends ActionBarActivity {
         Intent intent = getIntent();
         int position = intent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
         peeps = Person.listAll(Person.class);
-        Person clicked = (Person) peeps.get(position);
+        clicked = (Person) peeps.get(position);
 
         String firstName = clicked.getFirstName();
         TextView chartTitle = (TextView) findViewById(R.id.chartTitle);
-        chartTitle.setText(firstName + "Attendance");
+        chartTitle.setText(firstName + " Attendance");
         BarChart chart = (BarChart) findViewById(R.id.chart);
         BarData data = new BarData(getXAxisValues(), getDataSet());
         chart.setData(data);
-        chart.setDescription(firstName + "Attendance");
+        chart.setDescription(firstName + " Attendance");
         chart.animateXY(2000, 2000);
         chart.invalidate();
     }
@@ -47,11 +47,11 @@ public class BarChartActivity extends ActionBarActivity {
         ArrayList<BarDataSet> dataSets = null;
 
         ArrayList<BarEntry> valueSet1 = new ArrayList<>();
-        BarEntry v1e1 = new BarEntry(110.000f, 0); // Attended
+        BarEntry v1e1 = new BarEntry(clicked.getAttended(), 0); // Attended
         valueSet1.add(v1e1);
-        BarEntry v1e2 = new BarEntry(40.000f, 1); // Absent
+        BarEntry v1e2 = new BarEntry(clicked.getAuthorisedAbsences(), 1); // Absent
         valueSet1.add(v1e2);
-        BarEntry v1e3 = new BarEntry(60.000f, 2); // Authorised absent
+        BarEntry v1e3 = new BarEntry(clicked.getUnauthorisedAnsences(), 2); // Authorised absent
         valueSet1.add(v1e3);
         BarDataSet barDataSet1 = new BarDataSet(valueSet1, "Brand 1");
         barDataSet1.setColors(ColorTemplate.COLORFUL_COLORS);
