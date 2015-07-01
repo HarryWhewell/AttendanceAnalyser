@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Attendance Analyser</string>
+    <string name="action_settings">Settings</string>
+
+    // LoginActivity.java
+    <string name="login_page">Login</string>
+    <string name="title">Attendance Analyser</string>
+    <string name="welcome_message">Please login here</string>
+    <string name="password_hint">Enter your password here</string>
+    <string name="email_hint">Enter you email here</string>
+    <string name="login_button">Login</string>
+    <string name="register">Want to register instead</string>
+
+    // HomeActivity.java
+    <string name="home_message">Default: This is homepage!</string>
+    <string name="title_activity_home">Application - Home</string>
+    <string name="check_button">Check</string>
+    <string name="logout_button">Logout</string>
+
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Home</item>
+        <item >Find People</item>
+        <item >Photos</item>
+        <item >Communities</item>
+        <item >Pages</item>
+        <item >What\'s Hot</item>
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_media_pause</item>
+        <item>@drawable/ic_media_pause</item>
+        <item>@drawable/ic_media_pause</item>
+        <item>@drawable/ic_media_pause</item>
+        <item>@drawable/ic_media_pause</item>
+        <item>@drawable/ic_media_pause</item>
+    </array>
+    // RegisterRequiredActivity.java
+    <string name="title_activity_register">Application - Register</string>
+    <string name="form_message">Register form</string>
+    <string name="reg_email_hint">email</string>
+    <string name="reg_password_hint">password</string>
+    <string name="reg_password_confirm_hint">confirm password</string>
+    <string name="next_button">Next</string>
+
+    // RegisterOptionalActivity.java
+    <string name="title_activity_register_optional"> Application - Register Additional</string>
+    <string name="form_message2">Personal details form</string>
+    <string name="first_name_hint">first name</string>
+    <string name="last_name_hint">last name</string>
+    <string name="address_line1_hint">address line 1</string>
+    <string name="address_line2_hint">address line 2</string>
+    <string name="postcode_hint">postcode</string>
+    <string name="register_button">Register</string>
+    <string name="skip_button">Skip</string>
+
+    // ProfileActivity.java
+    <string name="title_activity_profile">Application - Profile</string>
+    <string name="menu_profile">Profile</string>
+    <string name="profile_default_message">Default: This is profile page</string>
+    <string name="save_button">Save</string>
+
+    // Validation Messages
+    <string name="validation_empty_email">email address cannot be empty</string>
+    <string name="validation_valid_email">email address must be in valid format</string>
+    <string name="validation_empty_password">password cannot be empty</string>
+    <string name="validation_valid_password">password must be in valid format</string>
+    <string name="validation_empty_first_name">first name cannot be empty</string>
+    <string name="validation_valid_first_name">first name must contain letters only and length between 2 and 30 characters</string>
+    <string name="validation_empty_last_name">last name cannot be empty</string>
+    <string name="validation_valid_last_name">last name must contain letters only and length between 2 and 30 characters</string>
+    <string name="validation_empty_address_one">address line 1 cannot be empty</string>
+    <string name="validation_empty_address_two">address line 2 cannot be empty</string>
+    <string name="validation_empty_postcode">postcode cannot be empty</string>
+    <string name="validation_valid_postcode">postcode must be in valid uk format</string>
+    <string name="title_activity_people_list">PeopleList</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_add_person">AddPerson</string>
+    <string name="title_activity_listof_people">ListofPeople</string>
+</resources>
