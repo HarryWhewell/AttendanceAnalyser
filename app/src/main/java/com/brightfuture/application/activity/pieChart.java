@@ -56,7 +56,7 @@ public class pieChart extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
         Intent intent = getIntent();
-        int position = intent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
+        int position = intent.getIntExtra(BarChartActivity.PERSON_POSITION, 0);
         peeps = Person.listAll(Person.class);
         clicked = (Person) peeps.get(position);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

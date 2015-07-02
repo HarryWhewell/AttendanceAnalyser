@@ -22,6 +22,8 @@ import com.brightfuture.application.persistence.Person;
 public class BarChartActivity extends ActionBarActivity {
     List peeps;
     Person clicked;
+    static final String PERSON_POSITION = "PERSON POSITION";
+    int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class BarChartActivity extends ActionBarActivity {
 
         // Get position of Person selected in ListOfPeople
         Intent intent = getIntent();
-        int position = intent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
+        position = intent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
         peeps = Person.listAll(Person.class);
         clicked = (Person) peeps.get(position);
 
@@ -93,10 +95,8 @@ public class BarChartActivity extends ActionBarActivity {
     }
 
     public void pieBTN(View view){
-        Intent gIntent = getIntent();
-      int position = gIntent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
         Intent intent = new Intent(BarChartActivity.this,pieChart.class);
-        intent.putExtra("position", position);
+        intent.putExtra(PERSON_POSITION, position);
         startActivity(intent);
     }
 }
