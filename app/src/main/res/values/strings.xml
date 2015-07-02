@@ -82,4 +82,5 @@
     <string name="title_activity_add_person">AddPerson</string>
     <string name="title_activity_listof_people">ListofPeople</string>
     <string name="title_activity_bar_chart">BarChartActivity</string>
+    <string name="title_activity_pie_chart">pieChart</string>
 </resources>

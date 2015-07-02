@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -89,5 +90,13 @@ public class BarChartActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void pieBTN(View view){
+        Intent gIntent = getIntent();
+      int position = gIntent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
+        Intent intent = new Intent(BarChartActivity.this,pieChart.class);
+        intent.putExtra("position", position);
+        startActivity(intent);
     }
 }
