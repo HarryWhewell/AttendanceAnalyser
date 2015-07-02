@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -51,12 +52,15 @@ public class pieChart extends ActionBarActivity {
     Person clicked;
     private Typeface tf;
 
+    static final String PERSON_POSITION = "PERSON POSITION";
+    int position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_chart);
         Intent intent = getIntent();
-        int position = intent.getIntExtra(BarChartActivity.PERSON_POSITION, 0);
+        position = intent.getIntExtra(BarChartActivity.PERSON_POSITION, 0);
         peeps = Person.listAll(Person.class);
         clicked = (Person) peeps.get(position);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -65,7 +69,7 @@ public class pieChart extends ActionBarActivity {
 
 
         TextView tv = (TextView) findViewById(R.id.chartTitle);
-        tv.setText(clicked.getFirstName() + "" + clicked.getLastName() + "Attendance");
+        tv.setText(clicked.getFirstName() + "" + "Attendance");
         mChart = (PieChart) findViewById(R.id.chart1);
         mChart.setUsePercentValues(true);
         mChart.setDescription(clicked.getFirstName() + "Attendance");
@@ -173,11 +177,9 @@ public class pieChart extends ActionBarActivity {
         // TODO Auto-generated method stub
 
     }
-    public void BarBTn(){
-        Intent gintent = getIntent();
-        int position = gintent.getIntExtra(ListofPeople.PERSON_POSITION, 0);
+    public void BarBTn(View view){
         Intent intent = new Intent(pieChart.this,BarChartActivity.class);
-        intent.putExtra("position", position);
+        intent.putExtra(PERSON_POSITION, position);
         startActivity(intent);
     }
 

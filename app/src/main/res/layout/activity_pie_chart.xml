@@ -20,22 +20,26 @@
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bar Chart"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
         android:id="@+id/button2"
-        android:layout_toRightOf="@id/chartTitle"
         android:onClick="BarBTn"
+        android:background="@drawable/bar_chart"
 
 
-        />
+        android:layout_alignTop="@+id/chartTitle"
+        android:layout_toRightOf="@+id/chartTitle"
+        android:layout_toEndOf="@+id/chartTitle" />
 
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chart1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/button2" />
 
 
 
